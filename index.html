@@ -754,7 +754,7 @@ body{background:var(--navy);color:var(--white);font-family:var(--sans)}
 
 <script>
 // ==================== GROQ API CONFIG ====================
-const GROQ_API_KEY = '';
+const GROQ_API_KEY = 'using-server-proxy-key';
 const GROQ_MODEL   = 'llama-3.3-70b-versatile';
 const GROQ_ENDPOINT = '/api/chat';
 const SYSTEM_PROMPT = `You are SanjayAI, a smart assistant embedded in Sanjay Charitesh Makam's portfolio. Answer questions about Sanjay professionally, concisely, and factually. Only discuss his professional background. For personal questions or things you are unsure about, direct them to sanjaychariteshmakam@gmail.com or 640-250-7165.
@@ -971,7 +971,7 @@ async function sendMessage() {
   try {
     const res = await fetch(GROQ_ENDPOINT, {
       method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer ' + GROQ_API_KEY},
+      headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
         model: GROQ_MODEL,
         messages:[{role:'system',content:SYSTEM_PROMPT},...history],
